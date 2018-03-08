@@ -126,4 +126,23 @@ systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
 ```
 OS info can also be found in: `C:\Windows\System32\license.rtf`, this is more useful if you don't have a shell such as directory traversal through ftp/web, or LFI.
 
+Check for listening ports, or other connected machines.
+```
+netstat 
+-ant
+```
+
+For Kernel exploits check the OS version and further check the KB patches. The first two links in the [Tools](Tools) Section are great for this as well as collecting general information. Some of the scripts will also search for vulnerable services, and file/folders as discussed here and output the results nicely formatted.
+
+
+Check the OS for important configuration files. These files may contain passwords that are base64 encoded used for Unattended installs.
+
+```
+c:\sysprep.inf
+c:\sysprep\sysprep.xml
+c:\unattend.xml
+%WINDIR%\Panther\Unattend\Unattended.xml
+%WINDIR%\Panther\Unattended.xml
+```
+
 
